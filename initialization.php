@@ -2,15 +2,16 @@
 $tasks = array(
 
   array(
-  'task' => 'go to store',
+  'taskname' => 'go to store',
   'Location' => 'Hyderabad',
   'completed' => true),
 
   array(
-  'task' => 'go to Office',
+  'taskname' => 'go to Office',
   'Location' => 'Hyderabad',
   'completed' => false)
 );
+
 
 
 function converttoupper($str, $tr2 = '') {
