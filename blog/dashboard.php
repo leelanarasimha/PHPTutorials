@@ -1,10 +1,16 @@
+<?php require('header.php'); ?>
+
 <?php
-/**
- * Created by PhpStorm.
- * User: leelanarasimha
- * Date: 31/03/17
- * Time: 9:49 PM
- */
+if ( ! isset($_SESSION['logged_user'])) {
+    $_SESSION['error'] = 'Please login to enter dashboard';
+    header('Location: login.php');
+
+}  ?>
 
 
-echo "welcome User";
+<?php
+echo $_SESSION['success'].$_SESSION['logged_user']['email'];
+
+?>
+
+<?php require('footer.php'); ?>
