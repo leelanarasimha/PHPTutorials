@@ -26,6 +26,9 @@ $article = $statement->fetch(PDO::FETCH_OBJ);
             </div>
             <h1 class="page-header"><?php echo $article->title; ?></h1>
             <div class="text-right"><?php echo date('d M, Y', strtotime($article->created_date)); ?></div>
+            <div>
+                <img src="uploads/<?php echo $article->image; ?>"/>
+            </div>
             <div><?php echo $article->description; ?></div>
         </div>
     </div>

@@ -48,6 +48,10 @@ $articles = $statement->fetchAll(PDO::FETCH_OBJ);
 
 
                         <div><?php echo $article->description; ?></div>
+                        <div>
+                            <a href="editarticle.php?id=<?php echo $article->id; ?>">Edit Article</a>
+                            <a href="deletearticle.php?id=<?php echo $article->id; ?>">Delete Article</a>
+                        </div>
 
                     </div>
                 </div>
