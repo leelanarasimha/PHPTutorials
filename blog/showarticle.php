@@ -1,12 +1,8 @@
 
 <?php
 require ('header.php');
-/**
- * Created by PhpStorm.
- * User: leelanarasimha
- * Date: 02/04/17
- * Time: 12:00 PM
- */
+$logged_user = $_SESSION['logged_user']['id'];
+
 
 $article_id = $_GET['id'];
 $pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
@@ -15,6 +11,12 @@ $statement = $pdo->prepare("select * from articles where id=$article_id");
 $statement->execute();
 
 $article = $statement->fetch(PDO::FETCH_OBJ);
+
+
+$statement = $pdo->prepare("Select comments.*, users.email from comments 
+JOIN users ON comments.user_id = users.id where comments.article_id=$article_id");
+$statement->execute();
+$comments = $statement->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 
@@ -34,9 +36,27 @@ $article = $statement->fetch(PDO::FETCH_OBJ);
     </div>
 
 
+    <!-- Comments Section -->
+    <h2 class="page-header">Comments</h2>
+    <?php foreach ($comments as $comment) { ?>
+    <div class="row">
+        <div class="col-md-12">
+            <h3><?php echo $comment->email; ?></h3>
+            <div><small>Posted On: <?php echo date('d M, Y', strtotime($comment->created_date)); ?></small></div>
+            <div><?php echo $comment->comment; ?></div>
+            <?php if ($logged_user == $comment->user_id) { ?>
+            <div><a href="">Edit Comment</a></div>
+            <?php } ?>
+        </div>
+    </div>
+    <?php } ?>
+
+    <!-- End Comments -->
+
+
     <div class="row" style="margin-top: 40px;">
         <div class="col-md-12">
-            <form method="post" action="submitcomment.php">
+            <form method="post" action="submitcomment.php?articleid=<?php echo $article->id; ?>">
                 <div class="form-group">
                     <label>Comment:</label>
                     <textarea class="form-control" name="comment"></textarea>
