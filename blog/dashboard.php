@@ -6,9 +6,23 @@ if (!isset($_SESSION['logged_user'])) {
     header('Location: login.php');
 
 }
+
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+} else {
+    $search = '';
+}
+
+
 $pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
 
-$statement = $pdo->prepare('Select * from articles');
+if ($search == '') {
+    $statement = $pdo->prepare('Select * from articles');
+} else {
+    $statement = $pdo->prepare("Select * from articles where title LIKE '%$search%'");
+}
+
+
 $statement->execute();
 $articles = $statement->fetchAll(PDO::FETCH_OBJ);
 
@@ -33,7 +47,20 @@ $articles = $statement->fetchAll(PDO::FETCH_OBJ);
             </div>
         <?php } ?>
 
+        <form method="GET" action="dashboard.php">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <input type="text" name="search" class="form-control" placeholder="Search" value="<?php echo $search; ?>"/>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" name="submit" value="Search" class="btn btn-success"/>
+            </div>
+        </div>
+        </form>
 
+        <?php if ($search != '') { ?>
+            <div><a href="dashboard.php" class="btn btn-info">Back to Articles</a></div>
+    <?php } ?>
         <?php if (count($articles) > 0) {
             foreach ($articles as $article) { ?>
 
@@ -58,7 +85,11 @@ $articles = $statement->fetchAll(PDO::FETCH_OBJ);
 
             <?php }
         } else { ?>
+            <?php if ($search == '') { ?>
             <div class="alert alert-info">No articles submitted</div>
+        <?php } else {  ?>
+                <div class="alert alert-info">No articles found with search "<?php echo $search; ?>"</div>
+        <?php } ?>
         <?php } ?>
 
     </div>

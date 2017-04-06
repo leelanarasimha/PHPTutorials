@@ -6,6 +6,7 @@ $title = $_POST['title'];
 $description = $_POST['description'];
 $status = $_POST['status'];
 
+
 $file_name = $_FILES['image']['name'];
 
 

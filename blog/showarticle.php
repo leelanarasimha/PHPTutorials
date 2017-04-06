@@ -1,8 +1,6 @@
-
 <?php
 require ('header.php');
 $logged_user = $_SESSION['logged_user']['id'];
-
 
 $article_id = $_GET['id'];
 $pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
@@ -17,6 +15,12 @@ $statement = $pdo->prepare("Select comments.*, users.email from comments
 JOIN users ON comments.user_id = users.id where comments.article_id=$article_id");
 $statement->execute();
 $comments = $statement->fetchAll(PDO::FETCH_OBJ);
+
+if (isset($_GET['comment_id'])) {
+    $comment_id = $_GET['comment_id'];
+} else {
+    $comment_id = '';
+}
 
 ?>
 
@@ -41,11 +45,22 @@ $comments = $statement->fetchAll(PDO::FETCH_OBJ);
     <?php foreach ($comments as $comment) { ?>
     <div class="row">
         <div class="col-md-12">
+            <?php if ($comment_id != $comment->id) { ?>
             <h3><?php echo $comment->email; ?></h3>
             <div><small>Posted On: <?php echo date('d M, Y', strtotime($comment->created_date)); ?></small></div>
             <div><?php echo $comment->comment; ?></div>
             <?php if ($logged_user == $comment->user_id) { ?>
-            <div><a href="">Edit Comment</a></div>
+            <div><a href="showarticle.php?id=<?php echo $article->id; ?>&comment_id=<?php echo $comment->id; ?>">Edit Comment</a></div>
+            <?php } ?>
+            <?php } else { ?>
+                <form method="post" action="updatecomment.php?comment_id=<?php echo $comment->id; ?>">
+                    <div class="form-group">
+                        <textarea class="form-control" name="comment"><?php echo $comment->comment; ?></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" name="submit" value="Update Comment"  class="btn btn-primary"/>
+                    </div>
+                </form>
             <?php } ?>
         </div>
     </div>
