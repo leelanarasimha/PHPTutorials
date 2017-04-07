@@ -47,6 +47,19 @@ $articles = $statement->fetchAll(PDO::FETCH_OBJ);
             </div>
         <?php } ?>
 
+        <?php if (isset($_SESSION['error'])) { ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        ?>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+
         <form method="GET" action="dashboard.php">
         <div class="row">
             <div class="col-md-6 col-md-offset-2">

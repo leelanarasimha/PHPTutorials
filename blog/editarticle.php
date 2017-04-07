@@ -1,4 +1,5 @@
 <?php
+
 require ('header.php');
 
 $article_id = $_GET['id'];

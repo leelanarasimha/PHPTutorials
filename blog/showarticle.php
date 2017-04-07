@@ -3,12 +3,19 @@ require ('header.php');
 $logged_user = $_SESSION['logged_user']['id'];
 
 $article_id = $_GET['id'];
+
 $pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
 $statement = $pdo->prepare("select * from articles where id=$article_id");
 
 $statement->execute();
 
 $article = $statement->fetch(PDO::FETCH_OBJ);
+
+if ($article == false) {
+    $_SESSION['error'] = 'Article doesnt exist ';
+    header('Location: dashboard.php');
+    return;
+}
 
 
 $statement = $pdo->prepare("Select comments.*, users.email from comments 
