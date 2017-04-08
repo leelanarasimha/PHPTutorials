@@ -4,7 +4,8 @@ require ('header.php');
 
 $article_id = $_GET['id'];
 
-$pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
+
+$pdo = Connection::connect();
 $statement = $pdo->prepare("select * from articles where id=$article_id");
 
 $statement->execute();

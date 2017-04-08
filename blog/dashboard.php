@@ -13,8 +13,7 @@ if (isset($_GET['search'])) {
     $search = '';
 }
 
-
-$pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
+$pdo = Connection::connect();
 
 if ($search == '') {
     $statement = $pdo->prepare('Select * from articles');

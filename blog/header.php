@@ -1,5 +1,7 @@
 <?php
-session_start(); ?>
+session_start();
+require('connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
