@@ -1,6 +1,7 @@
 <?php
 session_start();
-require('connection.php');
+require_once('connection.php');
+require_once('Managers/QueryBuilder.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

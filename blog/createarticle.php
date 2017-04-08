@@ -1,5 +1,9 @@
 <?php
 require('header.php');
+$pdo = Connection::connect();
+
+$queryBuilder = new QueryBuilder($pdo);
+$tags = $queryBuilder->executeQuery("select * from tags");
 
 
 if (!isset($_SESSION['logged_user'])) {
@@ -27,6 +31,15 @@ if (!isset($_SESSION['logged_user'])) {
                 <option value="">Select status</option>
                 <option value="active">Active</option>
                 <option value="inactive">Inactive</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Select Tags: </label>
+            <select name="tags" class="form-control" multiple>
+            <?php foreach ($tags as $tag) { ?>
+                <option value="<?php echo $tag->id; ?>"><?php echo $tag->tag_name; ?></option>
+                <?php  } ?>
             </select>
         </div>
 
