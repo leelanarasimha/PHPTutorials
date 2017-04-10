@@ -36,7 +36,7 @@ if (!isset($_SESSION['logged_user'])) {
 
         <div class="form-group">
             <label>Select Tags: </label>
-            <select name="tags" class="form-control" multiple>
+            <select name="tags[]" class="form-control" multiple>
             <?php foreach ($tags as $tag) { ?>
                 <option value="<?php echo $tag->id; ?>"><?php echo $tag->tag_name; ?></option>
                 <?php  } ?>
@@ -46,9 +46,6 @@ if (!isset($_SESSION['logged_user'])) {
         <div class="form-group">
             <input type="file" name="image"/>
         </div>
-
-
-
 
         <div>
             <input type="submit" name="submit" value="Create Article" class="btn btn-primary"/>

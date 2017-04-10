@@ -1,10 +1,10 @@
 <?php require('header.php'); ?>
 
 <?php
+
 if (!isset($_SESSION['logged_user'])) {
     $_SESSION['error'] = 'Please login to enter dashboard';
     header('Location: login.php');
-
 }
 
 if (isset($_GET['search'])) {
@@ -21,14 +21,8 @@ if ($search == '') {
     $statement = $pdo->prepare("Select * from articles where title LIKE '%$search%'");
 }
 
-
 $statement->execute();
 $articles = $statement->fetchAll(PDO::FETCH_OBJ);
-
-
-
-
-
 ?>
 
 

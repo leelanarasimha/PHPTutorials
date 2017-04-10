@@ -4,18 +4,22 @@ $logged_user = $_SESSION['logged_user']['id'];
 
 $article_id = $_GET['id'];
 
-$pdo = new PDO('mysql:host=localhost;dbname=tutorial_blog', 'root', '');
-$statement = $pdo->prepare("select * from articles where id=$article_id");
+$pdo = Connection::connect();
+$querybuilder = new QueryBuilder($pdo);
 
-$statement->execute();
-
-$article = $statement->fetch(PDO::FETCH_OBJ);
+$sql = "select articles.*, tags.tag_name, tags.id as tag_id from articles 
+  JOIN article_tag ON article_tag.article_id = articles.id 
+  JOIN tags ON tags.id = article_tag.tag_id
+where articles.id=$article_id";
+$article = $querybuilder->executeQuery($sql);
 
 if ($article == false) {
     $_SESSION['error'] = 'Article doesnt exist ';
     header('Location: dashboard.php');
     return;
 }
+
+
 
 
 $statement = $pdo->prepare("Select comments.*, users.email from comments 
@@ -37,12 +41,16 @@ if (isset($_GET['comment_id'])) {
             <div>
                 <a href="dashboard.php" class="btn btn-warning">Back to articles</a>
             </div>
-            <h1 class="page-header"><?php echo $article->title; ?></h1>
-            <div class="text-right"><?php echo date('d M, Y', strtotime($article->created_date)); ?></div>
+            <h1 class="page-header"><?php echo $article[0]->title; ?></h1>
+            <div>Tags: </div>
+            <?php foreach ($article as $tag) { ?>
+                <span><a href="articlesbytag.php?tag_id=<?php echo $tag->tag_id; ?>"><?php echo $tag->tag_name; ?></a></span>
+            <?php  } ?>
+            <div class="text-right"><?php echo date('d M, Y', strtotime($article[0]->created_date)); ?></div>
             <div>
-                <img src="uploads/<?php echo $article->image; ?>"/>
+                <img src="uploads/<?php echo $article[0]->image; ?>"/>
             </div>
-            <div><?php echo $article->description; ?></div>
+            <div><?php echo $article[0]->description; ?></div>
         </div>
     </div>
 

@@ -21,6 +21,7 @@ class QueryBuilder {
 
     public function insert($query) {
         $statement = $this->pdo->prepare($query);
-        $statement->execute();
+         $statement->execute();
+         return $statement;
     }
 }
