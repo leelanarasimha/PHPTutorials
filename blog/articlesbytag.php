@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: leelanarasimha
- * Date: 10/04/17
- * Time: 8:45 PM
- */
 
 require('header.php');
 $pdo = Connection::connect();
