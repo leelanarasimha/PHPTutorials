@@ -30,17 +30,19 @@ if (isset($_SESSION['error'])) {
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">Login</h1>
-                    <form method="post" action="submitlogin.php">
+                    <form method="post" action="submitlogin.php" class="login_form">
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="text" name="email" class="form-control"/>
+                            <input type="text" name="email" class="form-control email_input"/>
+                            <div class="email_error"></div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" name="password" class="form-control"/>
+                            <input type="password" name="password" id="dsds" class="form-control password_input"/>
+                            <div class="password_error"></div>
                         </div>
                         <div class="text-center">
-                            <input type="submit" name="submit" value="Login" class="btn btn-primary"/>
+                            <input type="submit" name="submit" value="Login" class="btn btn-primary login_button"/>
                         </div>
                     </form>
                 </div>
@@ -48,5 +50,7 @@ if (isset($_SESSION['error'])) {
         </div>
     </div>
 </div>
+
+<div class="text_data">dsdksdsdjkh</div>
 
 <?php require('footer.php'); ?>
