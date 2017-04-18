@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92abf1ac-0ca7-4d64-b98b-e943acb42645" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/footer.php" afterPath="$PROJECT_DIR$/blog/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/header.php" afterPath="$PROJECT_DIR$/blog/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/js/main.js" afterPath="$PROJECT_DIR$/blog/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/login.php" afterPath="$PROJECT_DIR$/blog/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/tutorial1.html" afterPath="$PROJECT_DIR$/javascript/tutorial1.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,20 +55,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showarticle.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/showarticle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1472">
-              <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="44" />
-              <folding>
-                <marker date="1491837326000" expanded="true" signature="185:374" ph="select * fro... articles" />
-                <marker date="1491837326000" expanded="true" signature="595:709" ph="Select comme... comments" />
-                <marker date="1491837326000" expanded="true" signature="1540:1566" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="articlesbytag.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/articlesbytag.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,8 +71,8 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1366">
-              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+            <state relative-caret-position="1368">
+              <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -119,10 +101,23 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="228">
+              <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="e#0#49#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checklogin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/checklogin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="28" />
+              <folding>
+                <marker date="1492530882000" expanded="true" signature="337:379" ph="select * fro... email" />
+                <marker date="1492530882000" expanded="true" signature="521:588" ph="select * fro... users" />
               </folding>
             </state>
           </provider>
@@ -197,6 +192,7 @@
         <option value="$PROJECT_DIR$/blog/main.css" />
         <option value="$PROJECT_DIR$/blog/header.php" />
         <option value="$PROJECT_DIR$/blog/login.php" />
+        <option value="$PROJECT_DIR$/blog/checklogin.php" />
         <option value="$PROJECT_DIR$/blog/js/main.js" />
       </list>
     </option>
@@ -211,7 +207,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="810" />
+    <option name="height" value="808" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -424,12 +420,12 @@
       <workItem from="1491663395628" duration="2954000" />
       <workItem from="1491835119578" duration="2751000" />
       <workItem from="1492009635678" duration="2467000" />
-      <workItem from="1492237259331" duration="1776000" />
+      <workItem from="1492237259331" duration="4119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30368000" />
+    <option name="totallyTimeSpent" value="32711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +437,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="810" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="808" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13662376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -451,7 +447,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3259053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -474,13 +470,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blog/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/submitarticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -869,16 +858,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1366">
-          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+        <state relative-caret-position="1368">
+          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/checklogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <marker date="1492530882000" expanded="true" signature="337:379" ph="select * fro... email" />
+            <marker date="1492530882000" expanded="true" signature="521:588" ph="select * fro... users" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="228">
+          <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>

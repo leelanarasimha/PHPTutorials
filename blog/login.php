@@ -51,6 +51,4 @@ if (isset($_SESSION['error'])) {
     </div>
 </div>
 
-<div class="text_data">dsdksdsdjkh</div>
-
 <?php require('footer.php'); ?>
